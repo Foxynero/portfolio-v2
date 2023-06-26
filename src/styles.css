@@ -1,0 +1,7 @@
+.hero__item.set-bg {
+  background-image: url("./assets/img/hero/banner.jpg");
+}
+
+.featured__item__pic.set-bg {
+  background-image: url("./assets/img/featured/feature-1.jpg");
+}
