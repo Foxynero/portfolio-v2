@@ -13,7 +13,7 @@ const Header = () => {
                 <div className="header__top__left">
                   <ul>
                     <li>
-                      <i className="fa fa-envelope" /> hello@colorlib.com
+                      <i className="fa fa-envelope" /> justlink@gmail.com
                     </li>
                     <li>Free Shipping for all Order of $99</li>
                   </ul>
@@ -22,34 +22,21 @@ const Header = () => {
               <div className="col-lg-6 col-md-6">
                 <div className="header__top__right">
                   <div className="header__top__right__social">
-                    <a href="#">
+                    <a href="#/">
                       <i className="fa fa-facebook" />
                     </a>
-                    <a href="#">
+                    <a href="#/">
                       <i className="fa fa-twitter" />
                     </a>
-                    <a href="#">
+                    <a href="#/">
                       <i className="fa fa-linkedin" />
                     </a>
-                    <a href="#">
+                    <a href="#/">
                       <i className="fa fa-pinterest-p" />
                     </a>
                   </div>
-                  <div className="header__top__right__language">
-                    <img src={language} alt="" />
-                    <div>English</div>
-                    <span className="arrow_carrot-down" />
-                    <ul>
-                      <li>
-                        <a href="#">Spanis</a>
-                      </li>
-                      <li>
-                        <a href="#">English</a>
-                      </li>
-                    </ul>
-                  </div>
                   <div className="header__top__right__auth">
-                    <a href="#">
+                    <a href="/login">
                       <i className="fa fa-user" /> Login
                     </a>
                   </div>
@@ -77,7 +64,7 @@ const Header = () => {
                     <a href="/shop">Shop</a>
                   </li>
                   <li>
-                    <a href="#">Pages</a>
+                    <a href="#/">Pages</a>
                     <ul className="header__menu__dropdown">
                       <li>
                         <a href="shop-details.html">Shop Details</a>
@@ -97,12 +84,7 @@ const Header = () => {
               <div className="header__cart">
                 <ul>
                   <li>
-                    <a href="#">
-                      <i className="fa fa-heart" /> <span>1</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
+                    <a href="/cart">
                       <i className="fa fa-shopping-bag" /> <span>3</span>
                     </a>
                   </li>

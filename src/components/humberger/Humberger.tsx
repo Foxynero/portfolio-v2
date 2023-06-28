@@ -1,25 +1,24 @@
 import React from "react";
 import logo from "../../assets/img/logo.png";
-import language from "../../assets/img/language.png";
 
 const Humberger = () => {
   return (
     <>
       <div className="humberger__menu__wrapper">
         <div className="humberger__menu__logo">
-          <a href="#">
+          <a href="#/">
             <img src={logo} alt="" />
           </a>
         </div>
         <div className="humberger__menu__cart">
           <ul>
             <li>
-              <a href="#">
+              <a href="#/">
                 <i className="fa fa-heart" /> <span>1</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#/">
                 <i className="fa fa-shopping-bag" /> <span>3</span>
               </a>
             </li>
@@ -29,25 +28,13 @@ const Humberger = () => {
           </div>
         </div>
         <div className="humberger__menu__widget">
-          <div className="header__top__right__language">
-            <img src={language} alt="" />
-            <div>English</div>
-            <span className="arrow_carrot-down" />
-            <ul>
-              <li>
-                <a href="#">Spanis</a>
-              </li>
-              <li>
-                <a href="#">English</a>
-              </li>
-            </ul>
-          </div>
           <div className="header__top__right__auth">
-            <a href="#">
+            <a href="/login">
               <i className="fa fa-user" /> Login
             </a>
           </div>
         </div>
+        {/* mobile screen */}
         <nav className="humberger__menu__nav mobile-menu">
           <ul>
             <li className="active">
@@ -57,7 +44,7 @@ const Humberger = () => {
               <a href="/shop">Shop</a>
             </li>
             <li>
-              <a href="#">Pages</a>
+              <a href="#/">Pages</a>
               <ul className="header__menu__dropdown">
                 <li>
                   <a href="shop-details.html">Shop Details</a>
@@ -81,25 +68,27 @@ const Humberger = () => {
             </li>
           </ul>
         </nav>
+        {/* mobile screen */}
+
         <div id="mobile-menu-wrap" />
         <div className="header__top__right__social">
-          <a href="#">
+          <a href="#/">
             <i className="fa fa-facebook" />
           </a>
-          <a href="#">
+          <a href="#/">
             <i className="fa fa-twitter" />
           </a>
-          <a href="#">
+          <a href="#/">
             <i className="fa fa-linkedin" />
           </a>
-          <a href="#">
+          <a href="#/">
             <i className="fa fa-pinterest-p" />
           </a>
         </div>
         <div className="humberger__menu__contact">
           <ul>
             <li>
-              <i className="fa fa-envelope" /> hello@colorlib.com
+              <i className="fa fa-envelope" /> juslink@mail.com
             </li>
             <li>Free Shipping for all Order of $99</li>
           </ul>

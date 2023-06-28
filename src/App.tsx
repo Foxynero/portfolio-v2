@@ -6,6 +6,7 @@ import Details from "./pages/details/Details";
 import Checkout from "./pages/checkout/Checkout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/details" element={<Details />} />
 
