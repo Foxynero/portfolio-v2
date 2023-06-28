@@ -1,13 +1,13 @@
 import React from "react";
-import A from "../../assets/img/logo.png";
+// import A from "../../assets/img/logo.png";
 import latest_product_1 from "../../assets/img/latest-product/lp-1.jpg";
 import latest_product_2 from "../../assets/img/latest-product/lp-2.jpg";
 import latest_product_3 from "../../assets/img/latest-product/lp-3.jpg";
-import banner_2 from "../../assets/img/banner/banner-2.jpg";
-import banner_1 from "../../assets/img/banner/banner-1.jpg";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Humberger from "../../components/humberger/Humberger";
+import Categories from "../../components/categories/Categories";
+import Banner from "../../components/banner/Banner";
 
 const Dashboard = () => {
   return (
@@ -114,60 +114,7 @@ const Dashboard = () => {
       {/* Hero Section End */}
 
       {/* Categories Section Begin */}
-      <section className="categories">
-        <div className="container">
-          <div className="row">
-            <div className="categories__slider owl-carousel">
-              <div className="col-lg-3">
-                <div
-                  className="categories__item set-bg"
-                  id="cat_1"
-                  data-setbg="../../assets/img/categories/cat-1.jpg">
-                  <h5>
-                    <a href="#">Fresh Fruit</a>
-                  </h5>
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div
-                  className="categories__item set-bg"
-                  data-setbg="../../assets/img/categories/cat-2.jpg">
-                  <h5>
-                    <a href="#">Dried Fruit</a>
-                  </h5>
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div
-                  className="categories__item set-bg"
-                  data-setbg="../../assets/img/categories/cat-3.jpg">
-                  <h5>
-                    <a href="#">Vegetables</a>
-                  </h5>
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div
-                  className="categories__item set-bg"
-                  data-setbg="../../assets/img/categories/cat-4.jpg">
-                  <h5>
-                    <a href="#">drink fruits</a>
-                  </h5>
-                </div>
-              </div>
-              <div className="col-lg-3">
-                <div
-                  className="categories__item set-bg"
-                  data-setbg="../../assets/img/categories/cat-5.jpg">
-                  <h5>
-                    <a href="#">drink fruits</a>
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Categories />
       {/* Categories Section End */}
 
       {/* Featured Section Begin */}
@@ -446,22 +393,7 @@ const Dashboard = () => {
       {/* Featured Section End */}
 
       {/* Banner Begin */}
-      <div className="banner">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-md-6 col-sm-6">
-              <div className="banner__pic">
-                <img src={banner_1} alt="" />
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-6 col-sm-6">
-              <div className="banner__pic">
-                <img src={banner_2} alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Banner />
       {/* Banner End */}
 
       {/* Latest Product Section Begin */}
