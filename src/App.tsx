@@ -8,6 +8,14 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login/Login";
 
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+
+import "primeicons/primeicons.css";
+
+//core
+import "primereact/resources/primereact.min.css";
+
 function App() {
   return (
     <>
