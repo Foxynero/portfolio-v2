@@ -54,32 +54,8 @@ const Header = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-6">
-              <nav className="header__menu">
-                <ul>
-                  <li className="active">
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="/shop">Shop</a>
-                  </li>
-                  <li>
-                    <a href="#/">Pages</a>
-                    <ul className="header__menu__dropdown">
-                      <li>
-                        <a href="shop-details.html">Shop Details</a>
-                      </li>
-                      <li>
-                        <a href="shoping-cart.html">Shoping Cart</a>
-                      </li>
-                      <li>
-                        <a href="checkout.html">Check Out</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            <div className="col-lg-6" />
+
             <div className="col-lg-3">
               <div className="header__cart">
                 <ul>

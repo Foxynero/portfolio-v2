@@ -108,9 +108,9 @@ const Checkout = () => {
         </div>
       </div>
       {/* Humberger End */}
-      {/* Header Section Begin */}
+
       <Header />
-      {/* Header Section End */}
+
       {/* Hero Section Begin */}
       <section className="hero hero-normal">
         <div className="container">
@@ -187,6 +187,7 @@ const Checkout = () => {
         </div>
       </section>
       {/* Hero Section End */}
+
       {/* Breadcrumb Section Begin */}
       <section
         className="breadcrumb-section set-bg"
@@ -206,6 +207,7 @@ const Checkout = () => {
         </div>
       </section>
       {/* Breadcrumb Section End */}
+
       {/* Checkout Section Begin */}
       <section className="checkout spad">
         <div className="container">
@@ -213,7 +215,7 @@ const Checkout = () => {
             <div className="col-lg-12">
               <h6>
                 <span className="icon_tag_alt" /> Have a coupon?
-                <a href="#">Click here</a> to enter your code
+                <a href="/cart">Click here</a> to enter your code
               </h6>
             </div>
           </div>
@@ -390,9 +392,8 @@ const Checkout = () => {
         </div>
       </section>
       {/* Checkout Section End */}
-      {/* Footer Section Begin */}
+
       <Footer />
-      {/* Footer Section End */}
     </>
   );
 };

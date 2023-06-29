@@ -1,6 +1,8 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
+import product_details_1 from "../../assets/img/product/details/product-details-1.jpg";
+import product_1 from "../../assets/img/featured/feature-1.jpg";
 
 const Details = () => {
   return (
@@ -108,9 +110,8 @@ const Details = () => {
         </div>
       </div>
       {/* Humberger End */}
-      {/* Header Section Begin */}
       <Header />
-      {/* Header Section End */}
+
       {/* Hero Section Begin */}
       <section className="hero hero-normal">
         <div className="container">
@@ -123,37 +124,37 @@ const Details = () => {
                 </div>
                 <ul>
                   <li>
-                    <a href="#">Fresh Meat</a>
+                    <a href="#/">Fresh Meat</a>
                   </li>
                   <li>
-                    <a href="#">Vegetables</a>
+                    <a href="#/">Vegetables</a>
                   </li>
                   <li>
-                    <a href="#">Fruit &amp; Nut Gifts</a>
+                    <a href="#/">Fruit &amp; Nut Gifts</a>
                   </li>
                   <li>
-                    <a href="#">Fresh Berries</a>
+                    <a href="#/">Fresh Berries</a>
                   </li>
                   <li>
-                    <a href="#">Ocean Foods</a>
+                    <a href="#/">Ocean Foods</a>
                   </li>
                   <li>
-                    <a href="#">Butter &amp; Eggs</a>
+                    <a href="#/">Butter &amp; Eggs</a>
                   </li>
                   <li>
-                    <a href="#">Fastfood</a>
+                    <a href="#/">Fastfood</a>
                   </li>
                   <li>
-                    <a href="#">Fresh Onion</a>
+                    <a href="#/">Fresh Onion</a>
                   </li>
                   <li>
-                    <a href="#">Papayaya &amp; Crisps</a>
+                    <a href="#/">Papayaya &amp; Crisps</a>
                   </li>
                   <li>
-                    <a href="#">Oatmeal</a>
+                    <a href="#/">Oatmeal</a>
                   </li>
                   <li>
-                    <a href="#">Fresh Bananas</a>
+                    <a href="#/">Fresh Bananas</a>
                   </li>
                 </ul>
               </div>
@@ -164,7 +165,6 @@ const Details = () => {
                   <form action="#">
                     <div className="hero__search__categories">
                       All Categories
-                      <span className="arrow_carrot-down" />
                     </div>
                     <input type="text" placeholder="What do yo u need?" />
                     <button type="submit" className="site-btn">
@@ -187,10 +187,9 @@ const Details = () => {
         </div>
       </section>
       {/* Hero Section End */}
+
       {/* Breadcrumb Section Begin */}
-      <section
-        className="breadcrumb-section set-bg"
-        data-setbg="img/breadcrumb.jpg">
+      <section className="breadcrumb-section set-bg">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
@@ -207,6 +206,7 @@ const Details = () => {
         </div>
       </section>
       {/* Breadcrumb Section End */}
+
       {/* Product Details Section Begin */}
       <section className="product-details spad">
         <div className="container">
@@ -216,29 +216,7 @@ const Details = () => {
                 <div className="product__details__pic__item">
                   <img
                     className="product__details__pic__item--large"
-                    src="img/product/details/product-details-1.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="product__details__pic__slider owl-carousel">
-                  <img
-                    data-imgbigurl="img/product/details/product-details-2.jpg"
-                    src="img/product/details/thumb-1.jpg"
-                    alt=""
-                  />
-                  <img
-                    data-imgbigurl="img/product/details/product-details-3.jpg"
-                    src="img/product/details/thumb-2.jpg"
-                    alt=""
-                  />
-                  <img
-                    data-imgbigurl="img/product/details/product-details-5.jpg"
-                    src="img/product/details/thumb-3.jpg"
-                    alt=""
-                  />
-                  <img
-                    data-imgbigurl="img/product/details/product-details-4.jpg"
-                    src="img/product/details/thumb-4.jpg"
+                    src={product_details_1}
                     alt=""
                   />
                 </div>
@@ -270,12 +248,10 @@ const Details = () => {
                     </div>
                   </div>
                 </div>
-                <a href="#" className="primary-btn">
+                <a href="#/" className="primary-btn">
                   ADD TO CARD
                 </a>
-                <a href="#" className="heart-icon">
-                  <span className="icon_heart_alt" />
-                </a>
+
                 <ul>
                   <li>
                     <b>Availability</b> <span>In Stock</span>
@@ -439,6 +415,7 @@ const Details = () => {
         </div>
       </section>
       {/* Product Details Section End */}
+
       {/* Related Product Section Begin */}
       <section className="related-product">
         <div className="container">
@@ -451,136 +428,66 @@ const Details = () => {
           </div>
           <div className="row">
             <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="product__item">
-                <div
-                  className="product__item__pic set-bg"
-                  data-setbg="img/product/product-1.jpg">
-                  <ul className="product__item__pic__hover">
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-heart" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-retweet" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-shopping-cart" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="product__item__text">
-                  <h6>
-                    <a href="#">Crab Pool Security</a>
-                  </h6>
-                  <h5>$30.00</h5>
-                </div>
+              <div className="featured__item">
+                <a href="/details">
+                  <img src={product_1} alt="" />
+                  <div className="featured__item__text">
+                    <h6>
+                      <a href="#">Crab Pool Security</a>
+                    </h6>
+                    <h5>$30.00</h5>
+                  </div>
+                </a>
               </div>
             </div>
+
             <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="product__item">
-                <div
-                  className="product__item__pic set-bg"
-                  data-setbg="img/product/product-2.jpg">
-                  <ul className="product__item__pic__hover">
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-heart" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-retweet" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-shopping-cart" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="product__item__text">
-                  <h6>
-                    <a href="#">Crab Pool Security</a>
-                  </h6>
-                  <h5>$30.00</h5>
-                </div>
+              <div className="featured__item">
+                <a href="/details">
+                  <img src={product_1} alt="" />
+                  <div className="featured__item__text">
+                    <h6>
+                      <a href="#">Crab Pool Security</a>
+                    </h6>
+                    <h5>$30.00</h5>
+                  </div>
+                </a>
               </div>
             </div>
+
             <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="product__item">
-                <div
-                  className="product__item__pic set-bg"
-                  data-setbg="img/product/product-3.jpg">
-                  <ul className="product__item__pic__hover">
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-heart" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-retweet" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-shopping-cart" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="product__item__text">
-                  <h6>
-                    <a href="#">Crab Pool Security</a>
-                  </h6>
-                  <h5>$30.00</h5>
-                </div>
+              <div className="featured__item">
+                <a href="/details">
+                  <img src={product_1} alt="" />
+                  <div className="featured__item__text">
+                    <h6>
+                      <a href="#">Crab Pool Security</a>
+                    </h6>
+                    <h5>$30.00</h5>
+                  </div>
+                </a>
               </div>
             </div>
+
             <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="product__item">
-                <div
-                  className="product__item__pic set-bg"
-                  data-setbg="img/product/product-7.jpg">
-                  <ul className="product__item__pic__hover">
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-heart" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-retweet" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-shopping-cart" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="product__item__text">
-                  <h6>
-                    <a href="#">Crab Pool Security</a>
-                  </h6>
-                  <h5>$30.00</h5>
-                </div>
+              <div className="featured__item">
+                <a href="/details">
+                  <img src={product_1} alt="" />
+                  <div className="featured__item__text">
+                    <h6>
+                      <a href="#">Crab Pool Security</a>
+                    </h6>
+                    <h5>$30.00</h5>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* Related Product Section End */}
-      {/* Footer Section Begin */}
+
       <Footer />
-      {/* Footer Section End */}
     </>
   );
 };

@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import cart_1 from "../../assets/img/cart/cart-1.jpg";
+import cart_2 from "../../assets/img/cart/cart-2.jpg";
+import cart_3 from "../../assets/img/cart/cart-3.jpg";
 
 const Cart = () => {
   return (
@@ -109,9 +112,9 @@ const Cart = () => {
           </div>
         </div>
         {/* Humberger End */}
-        {/* Header Section Begin */}
+
         <Header />
-        {/* Header Section End */}
+
         {/* Hero Section Begin */}
         <section className="hero hero-normal">
           <div className="container">
@@ -188,10 +191,9 @@ const Cart = () => {
           </div>
         </section>
         {/* Hero Section End */}
+
         {/* Breadcrumb Section Begin */}
-        <section
-          className="breadcrumb-section set-bg"
-          data-setbg="img/breadcrumb.jpg">
+        <section className="breadcrumb-section set-bg">
           <div className="container">
             <div className="row">
               <div className="col-lg-12 text-center">
@@ -207,6 +209,7 @@ const Cart = () => {
           </div>
         </section>
         {/* Breadcrumb Section End */}
+
         {/* Shoping Cart Section Begin */}
         <section className="shoping-cart spad">
           <div className="container">
@@ -226,7 +229,7 @@ const Cart = () => {
                     <tbody>
                       <tr>
                         <td className="shoping__cart__item">
-                          <img src="img/cart/cart-1.jpg" alt="" />
+                          <img src={cart_1} alt="" />
                           <h5>Vegetable’s Package</h5>
                         </td>
                         <td className="shoping__cart__price">$55.00</td>
@@ -244,7 +247,7 @@ const Cart = () => {
                       </tr>
                       <tr>
                         <td className="shoping__cart__item">
-                          <img src="img/cart/cart-2.jpg" alt="" />
+                          <img src={cart_2} alt="" />
                           <h5>Fresh Garden Vegetable</h5>
                         </td>
                         <td className="shoping__cart__price">$39.00</td>
@@ -262,7 +265,7 @@ const Cart = () => {
                       </tr>
                       <tr>
                         <td className="shoping__cart__item">
-                          <img src="img/cart/cart-3.jpg" alt="" />
+                          <img src={cart_3} alt="" />
                           <h5>Organic Bananas</h5>
                         </td>
                         <td className="shoping__cart__price">$69.00</td>
@@ -286,10 +289,10 @@ const Cart = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="shoping__cart__btns">
-                  <a href="#" className="primary-btn cart-btn">
+                  <a href="/" className="primary-btn cart-btn">
                     CONTINUE SHOPPING
                   </a>
-                  <a href="#" className="primary-btn cart-btn cart-btn-right">
+                  <a href="/" className="primary-btn cart-btn cart-btn-right">
                     <span className="icon_loading" /> Upadate Cart
                   </a>
                 </div>
@@ -318,7 +321,7 @@ const Cart = () => {
                       Total <span>$454.98</span>
                     </li>
                   </ul>
-                  <a href="#" className="primary-btn">
+                  <a href="/checkout" className="primary-btn">
                     PROCEED TO CHECKOUT
                   </a>
                 </div>
@@ -327,9 +330,8 @@ const Cart = () => {
           </div>
         </section>
         {/* Shoping Cart Section End */}
-        {/* Footer Section Begin */}
+
         <Footer />
-        {/* Footer Section End */}
       </>
     </>
   );
