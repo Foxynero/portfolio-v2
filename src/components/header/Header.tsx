@@ -31,9 +31,6 @@ const Header = () => {
                     <a href="#/">
                       <i className="fa fa-linkedin" />
                     </a>
-                    <a href="#/">
-                      <i className="fa fa-pinterest-p" />
-                    </a>
                   </div>
                   <div className="header__top__right__auth">
                     <a href="/login">

@@ -26,7 +26,7 @@ const Categories = () => {
             <div className="categories__slider">
               <div className="col-lg-3">
                 <a href="/shop">
-                  <img src={category_1} alt="" width="100%" height={250} />
+                  <img src={category_1} alt="" width="100%" height={200} />
                   <h5 className="paginate_text">
                     <a href="/shop">Fresh Fruit</a>
                   </h5>
@@ -39,7 +39,7 @@ const Categories = () => {
             <div className="categories__slider">
               <div className="col-lg-3">
                 <a href="/shop">
-                  <img src={category_2} alt="" width="100%" height={250} />
+                  <img src={category_2} alt="" width="100%" height={200} />
                   <h5 className="paginate_text">
                     <a href="/shop">Fresh Fruit</a>
                   </h5>
@@ -52,7 +52,7 @@ const Categories = () => {
             <div className="categories__slider">
               <div className="col-lg-3">
                 <a href="/shop">
-                  <img src={category_3} alt="" width="100%" height={250} />
+                  <img src={category_3} alt="" width="100%" height={200} />
                   <h5 className="paginate_text">
                     <a href="/shop">Fresh Fruit</a>
                   </h5>
@@ -65,7 +65,7 @@ const Categories = () => {
             <div className="categories__slider">
               <div className="col-lg-3">
                 <a href="/shop">
-                  <img src={category_4} alt="" width="100%" height={250} />
+                  <img src={category_4} alt="" width="100%" height={200} />
                   <h5 className="paginate_text">
                     <a href="/shop">Fresh Fruit</a>
                   </h5>
@@ -78,7 +78,7 @@ const Categories = () => {
             <div className="categories__slider">
               <div className="col-lg-3">
                 <a href="/shop">
-                  <img src={category_5} alt="" width="100%" height={250} />
+                  <img src={category_5} alt="" width="100%" height={200} />
                   <h5 className="paginate_text">
                     <a href="/shop">Fresh Fruit</a>
                   </h5>
@@ -91,7 +91,7 @@ const Categories = () => {
             <div className="categories__slider">
               <div className="col-lg-3">
                 <a href="/shop">
-                  <img src={category_1} alt="" width="100%" height={250} />
+                  <img src={category_1} alt="" width="100%" height={200} />
                   <h5 className="paginate_text">
                     <a href="/shop">Fresh Fruit</a>
                   </h5>
