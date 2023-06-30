@@ -2,17 +2,16 @@ import React from "react";
 import "./styles.css";
 import Cart from "./pages/cart/Cart";
 import Shop from "./pages/shop/Shop";
+import Login from "./pages/login/Login";
 import Details from "./pages/details/Details";
+import Register from "./pages/register/Register";
 import Checkout from "./pages/checkout/Checkout";
 import Dashboard from "./pages/dashboard/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/login/Login";
 
 //theme
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-
 import "primeicons/primeicons.css";
-
 //core
 import "primereact/resources/primereact.min.css";
 
@@ -26,6 +25,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/login" element={<Login />} />
           <Route path="/details" element={<Details />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<Checkout />} />
 
           {/* <Route path="/details/:id" element={<Details />} /> */}
