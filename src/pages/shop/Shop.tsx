@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import lp_1 from "../../assets/img/latest-product/lp-1.jpg";
@@ -6,8 +6,30 @@ import lp_2 from "../../assets/img/latest-product/lp-2.jpg";
 import lp_3 from "../../assets/img/latest-product/lp-3.jpg";
 import product_1 from "../../assets/img/featured/feature-1.jpg";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
+import axios from "axios";
 
 const Shop = () => {
+  const [products, setProducts] = useState<[]>([]);
+  useEffect(() => {
+    // calling the  active products by category api
+    axios
+      .post(
+        `${process.env.REACT_APP_Base_url}/products/get_products_category`,
+        {
+          product_category: 1,
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status === 200) {
+          setProducts(res.data.product);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       {/* Humberger Begin */}
@@ -121,14 +143,12 @@ const Shop = () => {
       {/* Hero Section End */}
 
       {/* Breadcrumb Section Begin */}
-      <section
-        className="breadcrumb-section set-bg"
-        data-setbg="img/breadcrumb.jpg">
+      <section className="breadcrumb-section set-bg">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
               <div className="breadcrumb__text">
-                <h2>Organi Shop</h2>
+                <h2>Category name</h2>
                 <div className="breadcrumb__option">
                   <a href="/">Home</a>
                   <span>Shop</span>
@@ -279,6 +299,26 @@ const Shop = () => {
             </div>
 
             {/* products */}
+
+            {products &&
+              products.map((product: any) => {
+                return (
+                  <div className="col-lg-3 col-md-4 col-sm-6">
+                    <div className="featured__item">
+                      <a href="/details">
+                        <img src={product_1} alt="" />
+                        <div className="featured__item__text">
+                          <h6>
+                            <a href="#/">{product.name}</a>
+                          </h6>
+                          <h5>${product.price}</h5>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
+
             <div className="col-lg-9 col-md-7">
               <div className="row">
                 <div className="col-lg-3 col-md-4 col-sm-6">

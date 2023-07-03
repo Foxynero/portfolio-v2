@@ -1,11 +1,27 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import product_details_1 from "../../assets/img/product/details/product-details-1.jpg";
 import product_1 from "../../assets/img/featured/feature-1.jpg";
+import product_details_1 from "../../assets/img/product/details/product-details-1.jpg";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
 
 const Details = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    axios
+      .post(`${process.env.REACT_APP_Base_url}/products/get_product_detail`, {
+        post_id: 1,
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       {/* Humberger Begin */}

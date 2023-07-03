@@ -600,8 +600,7 @@ ol {
   position: absolute;
   right: 18px;
   top: 9px;
-  content: "3";
-  font-family: "ElegantIcons";
+  content: "";
   font-size: 18px;
   color: #ffffff;
 }

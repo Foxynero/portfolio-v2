@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 
 const HeroPage = () => {
+  useEffect(() => {
+    // const script = document.createElement("script");
+    // script.src = "js/main.js";
+    // script.async = true;
+    // document.body.appendChild(script);
+    // return () => {
+    //   document.body.removeChild(script);
+    // };
+
+    // calling the categories api
+    axios
+      .get(`${process.env.REACT_APP_Base_url}/products/product_category`)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <section className="hero">

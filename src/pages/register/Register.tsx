@@ -15,7 +15,7 @@ const Register = () => {
     e.preventDefault();
 
     axios
-      .post(`${process.env.REACT_APP_Base_url}/register`, {
+      .post(`${process.env.REACT_APP_Base_url}/sellers/register`, {
         firstName,
         lastName,
         email,
@@ -26,10 +26,9 @@ const Register = () => {
         business_category,
       })
       .then((res) => {
-        console.log(res.data);
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user", JSON.stringify(res.data.user));
-        window.location.href = "/";
+        if (res.data.status === 201) {
+          window.location.href = "/";
+        }
       })
       .catch((err) => {
         console.log(err);

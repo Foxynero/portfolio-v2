@@ -9,18 +9,22 @@ const Login = () => {
     e.preventDefault();
 
     axios
-      .post(`${process.env.REACT_APP_Base_url}/login`, {
+      .post(`${process.env.REACT_APP_Base_url}/sellers/login`, {
         email,
         password,
       })
       .then((res) => {
+        alert(res.data.message);
         console.log(res.data);
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user", JSON.stringify(res.data.user));
-        window.location.href = "/";
+        if (res.data.status === 200) {
+          sessionStorage.setItem("token", res.data.token);
+          sessionStorage.setItem("user", JSON.stringify(res.data.user));
+          window.location.href = "/";
+        }
       })
       .catch((err) => {
         console.log(err);
+        alert(err.data.message);
       });
   };
 
