@@ -80,7 +80,7 @@
   /*--------------------------
         Select
     ----------------------------*/
-  $("select").niceSelect();
+  // $("select").niceSelect();
 
   /*------------------
 		Single Product

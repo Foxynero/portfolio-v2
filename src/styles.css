@@ -1056,7 +1056,7 @@ ol {
   height: 1px;
   width: 10px;
   background: #ffffff;
-  content: "";
+  /* content: ""; */
 }
 
 .breadcrumb__option span {
@@ -3484,7 +3484,7 @@ ol {
 
 /* PAGINATION TEXT */
 .paginate_text {
-  background-color: #eee;
+  /* background-color: #eee; */
   justify-content: center;
   display: flex;
   padding: 5px;
@@ -3498,4 +3498,23 @@ ol {
   margin: 5px;
   text-transform: uppercase;
   font-weight: 900;
+  font-size: 24px;
+}
+
+.categories_section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.categories_section .category_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
 }

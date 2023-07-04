@@ -1,22 +1,25 @@
+import axios from "axios";
+import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import lp_1 from "../../assets/img/latest-product/lp-1.jpg";
 import lp_2 from "../../assets/img/latest-product/lp-2.jpg";
 import lp_3 from "../../assets/img/latest-product/lp-3.jpg";
-import product_1 from "../../assets/img/featured/feature-1.jpg";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
-import axios from "axios";
 
 const Shop = () => {
+  const location = useLocation();
+  const item_category: string = location.state.data;
   const [products, setProducts] = useState<[]>([]);
+
   useEffect(() => {
     // calling the  active products by category api
     axios
       .post(
-        `${process.env.REACT_APP_Base_url}/products/get_products_category`,
+        `${process.env.REACT_APP_Base_url}/products/get_product_by_category`,
         {
-          product_category: 1,
+          product_section: item_category,
         }
       )
       .then((res) => {
@@ -143,21 +146,22 @@ const Shop = () => {
       {/* Hero Section End */}
 
       {/* Breadcrumb Section Begin */}
-      <section className="breadcrumb-section set-bg">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              <div className="breadcrumb__text">
-                <h2>Category name</h2>
-                <div className="breadcrumb__option">
-                  <a href="/">Home</a>
-                  <span>Shop</span>
+      {location.state && (
+        <section className="breadcrumb-section set-bg">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 text-center">
+                <div className="breadcrumb__text">
+                  <h2>{location.state.data}</h2>
+                  <div className="breadcrumb__option">
+                    <a href="/">Home</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
       {/* Breadcrumb Section End */}
 
       {/* Product Section Begin */}
@@ -300,82 +304,26 @@ const Shop = () => {
 
             {/* products */}
 
-            {products &&
-              products.map((product: any) => {
-                return (
-                  <div className="col-lg-3 col-md-4 col-sm-6">
-                    <div className="featured__item">
-                      <a href="/details">
-                        <img src={product_1} alt="" />
-                        <div className="featured__item__text">
-                          <h6>
-                            <a href="#/">{product.name}</a>
-                          </h6>
-                          <h5>${product.price}</h5>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                );
-              })}
-
             <div className="col-lg-9 col-md-7">
               <div className="row">
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <div className="featured__item">
-                    <a href="/details">
-                      <img src={product_1} alt="" />
-                      <div className="featured__item__text">
-                        <h6>
-                          <a href="#">Crab Pool Security</a>
-                        </h6>
-                        <h5>$30.00</h5>
+                {products &&
+                  products.map((product: any) => {
+                    return (
+                      <div className="col-lg-3 col-md-4 col-sm-6">
+                        <div className="featured__item">
+                          <a href="/details">
+                            <img src={product.product_image} alt="" />
+                            <div className="featured__item__text">
+                              <h6>
+                                <a href="#/">{product.product_name}</a>
+                              </h6>
+                              <h5>GH₵ {product.product_price}</h5>
+                            </div>
+                          </a>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <div className="featured__item">
-                    <a href="/details">
-                      <img src={product_1} alt="" />
-                      <div className="featured__item__text">
-                        <h6>
-                          <a href="#">Crab Pool Security</a>
-                        </h6>
-                        <h5>$30.00</h5>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <div className="featured__item">
-                    <a href="/details">
-                      <img src={product_1} alt="" />
-                      <div className="featured__item__text">
-                        <h6>
-                          <a href="#">Crab Pool Security</a>
-                        </h6>
-                        <h5>$30.00</h5>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <div className="featured__item">
-                    <a href="/details">
-                      <img src={product_1} alt="" />
-                      <div className="featured__item__text">
-                        <h6>
-                          <a href="#">Crab Pool Security</a>
-                        </h6>
-                        <h5>$30.00</h5>
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                    );
+                  })}
               </div>
               <div className="product__pagination">
                 <a href="#">1</a>

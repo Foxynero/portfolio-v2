@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 
 const HeroPage = () => {
-  const [sections, setSections] = useState<[]>([]);
-
   useEffect(() => {
     // const script = document.createElement("script");
     // script.src = "js/main.js";
@@ -15,10 +13,9 @@ const HeroPage = () => {
 
     // calling the categories api
     axios
-      .get(`${process.env.REACT_APP_Base_url}/utils/get_product_sections`)
+      .get(`${process.env.REACT_APP_Base_url}/products/product_category`)
       .then((res) => {
         console.log(res.data);
-        setSections(res.data.product_sections);
       })
       .catch((err) => {
         console.log(err);
@@ -37,14 +34,39 @@ const HeroPage = () => {
                   <span>All departments</span>
                 </div>
                 <ul>
-                  {sections &&
-                    sections.map((section: any) => {
-                      return (
-                        <li key={section.id}>
-                          <a href="#/">{section.product_section_name}</a>
-                        </li>
-                      );
-                    })}
+                  <li>
+                    <a href="#/">Fresh Meat</a>
+                  </li>
+                  <li>
+                    <a href="#/">Vegetables</a>
+                  </li>
+                  <li>
+                    <a href="#/">Fruit &amp; Nut Gifts</a>
+                  </li>
+                  <li>
+                    <a href="#/">Fresh Berries</a>
+                  </li>
+                  <li>
+                    <a href="#/">Ocean Foods</a>
+                  </li>
+                  <li>
+                    <a href="#/">Butter &amp; Eggs</a>
+                  </li>
+                  <li>
+                    <a href="#/">Fastfood</a>
+                  </li>
+                  <li>
+                    <a href="#/">Fresh Onion</a>
+                  </li>
+                  <li>
+                    <a href="#/">Papayaya &amp; Crisps</a>
+                  </li>
+                  <li>
+                    <a href="#/">Oatmeal</a>
+                  </li>
+                  <li>
+                    <a href="#/">Fresh Bananas</a>
+                  </li>
                 </ul>
               </div>
             </div>

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import product_1 from "../../assets/img/featured/feature-1.jpg";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState<[]>([]);
@@ -33,76 +33,26 @@ const Products = () => {
             {products &&
               products.map((product: any) => {
                 return (
-                  <div className="col-lg-3 col-md-4 col-sm-6">
+                  <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
                     <div className="featured__item">
-                      <a href="/details">
-                        <img src={product_1} alt="" />
+                      <Link to={`/details`} state={{ data: product.id }}>
+                        <img
+                          src={product.product_image}
+                          alt={product.product_name}
+                          width="100%"
+                          height={250}
+                        />
                         <div className="featured__item__text">
                           <h6>
-                            <a href="#/">{product.name}</a>
+                            <Link to={`/details`}>{product.product_name}</Link>
                           </h6>
-                          <h5>${product.price}</h5>
+                          <h5>${product.product_price}</h5>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 );
               })}
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="featured__item">
-                <a href="/details">
-                  <img src={product_1} alt="" />
-                  <div className="featured__item__text">
-                    <h6>
-                      <a href="#">Crab Pool Security</a>
-                    </h6>
-                    <h5>$30.00</h5>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="featured__item">
-                <a href="/details">
-                  <img src={product_1} alt="" />
-                  <div className="featured__item__text">
-                    <h6>
-                      <a href="#">Crab Pool Security</a>
-                    </h6>
-                    <h5>$30.00</h5>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="featured__item">
-                <a href="/details">
-                  <img src={product_1} alt="" />
-                  <div className="featured__item__text">
-                    <h6>
-                      <a href="#">Crab Pool Security</a>
-                    </h6>
-                    <h5>$30.00</h5>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="featured__item">
-                <a href="/details">
-                  <img src={product_1} alt="" />
-                  <div className="featured__item__text">
-                    <h6>
-                      <a href="#">Crab Pool Security</a>
-                    </h6>
-                    <h5>$30.00</h5>
-                  </div>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
