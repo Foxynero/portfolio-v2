@@ -8,30 +8,34 @@ import lp_2 from "../../assets/img/latest-product/lp-2.jpg";
 import lp_3 from "../../assets/img/latest-product/lp-3.jpg";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
 
-const Shop = () => {
+const Search = () => {
   const location = useLocation();
-  const item_category: string = location.state.data;
-  const [products, setProducts] = useState<[]>([]);
+  console.log(location);
+  const item_category: any = location.state.data;
+  // const [products, setProducts] = useState<[]>([]);
+  // if (location.state.data.length > 0) {
+  //   setProducts(location.state.data);
+  // }
 
-  useEffect(() => {
-    // calling the  active products by category api
-    axios
-      .post(
-        `${process.env.REACT_APP_Base_url}/products/get_product_by_category`,
-        {
-          product_section: item_category,
-        }
-      )
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.status === 200) {
-          setProducts(res.data.product);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [item_category]);
+  // useEffect(() => {
+  //   // calling the  active products by category api
+  //   axios
+  //     .post(
+  //       `${process.env.REACT_APP_Base_url}/products/get_product_by_category`,
+  //       {
+  //         product_section: item_category,
+  //       }
+  //     )
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       if (res.data.status === 200) {
+  //         setProducts(res.data.product);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [item_category]);
 
   return (
     <>
@@ -146,22 +150,20 @@ const Shop = () => {
       {/* Hero Section End */}
 
       {/* Breadcrumb Section Begin */}
-      {location.state && (
-        <section className="breadcrumb-section set-bg">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12 text-center">
-                <div className="breadcrumb__text">
-                  <h2>{location.state.data}</h2>
-                  <div className="breadcrumb__option">
-                    <a href="/">Home</a>
-                  </div>
+      <section className="breadcrumb-section set-bg">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 text-center">
+              <div className="breadcrumb__text">
+                <h2>Searched Results</h2>
+                <div className="breadcrumb__option">
+                  <a href="/">Home</a>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
       {/* Breadcrumb Section End */}
 
       {/* Product Section Begin */}
@@ -306,8 +308,8 @@ const Shop = () => {
 
             <div className="col-lg-9 col-md-7">
               <div className="row">
-                {products &&
-                  products.map((product: any) => {
+                {item_category &&
+                  item_category.map((product: any) => {
                     return (
                       <div
                         className="col-lg-3 col-md-4 col-sm-6"
@@ -346,4 +348,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Search;

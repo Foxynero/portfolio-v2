@@ -1,7 +1,3 @@
-// import A from "../../assets/img/logo.png";
-// import latest_product_1 from "../../assets/img/latest-product/lp-1.jpg";
-// import latest_product_2 from "../../assets/img/latest-product/lp-2.jpg";
-// import latest_product_3 from "../../assets/img/latest-product/lp-3.jpg";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Humberger from "../../components/humberger/Humberger";

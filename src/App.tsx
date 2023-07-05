@@ -14,6 +14,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primeicons/primeicons.css";
 //core
 import "primereact/resources/primereact.min.css";
+import Search from "./pages/search/Search";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/search" element={<Search />} />
           <Route path="/details" element={<Details />} />
           <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<Checkout />} />

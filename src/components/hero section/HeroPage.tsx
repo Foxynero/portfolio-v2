@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const HeroPage = () => {
+  const navigate = useNavigate();
+
   const [sections, setSections] = useState<[]>([]);
+  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     // const script = document.createElement("script");
@@ -24,6 +28,29 @@ const HeroPage = () => {
         console.log(err);
       });
   }, []);
+
+  const handleSearch = (e: any): void => {
+    e.preventDefault();
+    console.log("searching...", search);
+
+    // calling the search api
+    axios
+      .post(`${process.env.REACT_APP_Base_url}/products/search_product`, {
+        product_name: search,
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status === 200) {
+          // window.location.href = "/search";
+          navigate("/search", {
+            state: { data: res.data.product },
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -51,11 +78,15 @@ const HeroPage = () => {
             <div className="col-lg-9">
               <div className="hero__search">
                 <div className="hero__search__form">
-                  <form action="#">
+                  <form onSubmit={handleSearch}>
                     <div className="hero__search__categories">
                       All Categories
                     </div>
-                    <input type="text" placeholder="What do yo u need?" />
+                    <input
+                      type="text"
+                      placeholder="What do yo u need?"
+                      onChange={(e) => setSearch(e.target.value)}
+                    />
                     <button type="submit" className="site-btn">
                       SEARCH
                     </button>
