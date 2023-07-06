@@ -15,6 +15,7 @@ import "primeicons/primeicons.css";
 //core
 import "primereact/resources/primereact.min.css";
 import Search from "./pages/search/Search";
+import Activation from "./pages/activation/Activation";
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/search" element={<Search />} />
           <Route path="/details" element={<Details />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/activation" element={<Activation />} />
 
           {/* <Route path="/details/:id" element={<Details />} /> */}
           <Route

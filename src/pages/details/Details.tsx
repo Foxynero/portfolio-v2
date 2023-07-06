@@ -2,10 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import product_1 from "../../assets/img/featured/feature-1.jpg";
-import product_details_1 from "../../assets/img/product/details/product-details-1.jpg";
+// import product_details_1 from "../../assets/img/product/details/product-details-1.jpg";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
 import { useLocation } from "react-router-dom";
+import RelateProducts from "../../components/related products/RelateProducts";
 
 const Details = () => {
   const location = useLocation();
@@ -341,74 +341,9 @@ const Details = () => {
       {/* Product Details Section End */}
 
       {/* Related Product Section Begin */}
-      <section className="related-product">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="section-title related__product__title">
-                <h2>Related Product</h2>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="featured__item">
-                <a href="/details">
-                  <img src={product_1} alt="" />
-                  <div className="featured__item__text">
-                    <h6>
-                      <a href="#">Crab Pool Security</a>
-                    </h6>
-                    <h5>$30.00</h5>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="featured__item">
-                <a href="/details">
-                  <img src={product_1} alt="" />
-                  <div className="featured__item__text">
-                    <h6>
-                      <a href="#">Crab Pool Security</a>
-                    </h6>
-                    <h5>$30.00</h5>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="featured__item">
-                <a href="/details">
-                  <img src={product_1} alt="" />
-                  <div className="featured__item__text">
-                    <h6>
-                      <a href="#">Crab Pool Security</a>
-                    </h6>
-                    <h5>$30.00</h5>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="featured__item">
-                <a href="/details">
-                  <img src={product_1} alt="" />
-                  <div className="featured__item__text">
-                    <h6>
-                      <a href="#">Crab Pool Security</a>
-                    </h6>
-                    <h5>$30.00</h5>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {product_details && (
+        <RelateProducts category={product_details.product_section} />
+      )}
       {/* Related Product Section End */}
 
       <Footer />

@@ -47,14 +47,14 @@
   /*------------------
 		Navigation
 	--------------------*/
-  $(".mobile-menu").slicknav({
-    prependTo: "#mobile-menu-wrap",
-    allowParentLinks: true,
-  });
+  // $(".mobile-menu").slicknav({
+  //   prependTo: "#mobile-menu-wrap",
+  //   allowParentLinks: true,
+  // });
 
-  $(".hero__categories__all").on("click", function () {
-    $(".hero__categories ul").slideToggle(400);
-  });
+  // $(".hero__categories__all").on("click", function () {
+  //   $(".hero__categories ul").slideToggle(400);
+  // });
 
   /*-----------------------
 		Price Range Slider

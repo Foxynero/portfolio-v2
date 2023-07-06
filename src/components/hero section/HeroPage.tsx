@@ -45,6 +45,8 @@ const HeroPage = () => {
           navigate("/search", {
             state: { data: res.data.product },
           });
+        } else {
+          alert("No product found");
         }
       })
       .catch((err) => {

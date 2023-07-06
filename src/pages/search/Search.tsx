@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -315,15 +315,17 @@ const Search = () => {
                         className="col-lg-3 col-md-4 col-sm-6"
                         key={product.id}>
                         <div className="featured__item">
-                          <a href="/details">
+                          <Link to="/details" state={{ data: product.id }}>
                             <img src={product.product_image} alt="" />
                             <div className="featured__item__text">
                               <h6>
-                                <a href="#/">{product.product_name}</a>
+                                <Link to="/details">
+                                  {product.product_name}
+                                </Link>
                               </h6>
                               <h5>GH₵ {product.product_price}</h5>
                             </div>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     );

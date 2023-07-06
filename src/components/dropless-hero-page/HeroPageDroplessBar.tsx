@@ -1,6 +1,36 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HeroPageDroplessBar = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState<string>("");
+
+  const handleSearch = (e: any): void => {
+    e.preventDefault();
+    console.log("searching...", search);
+
+    // calling the search api
+    axios
+      .post(`${process.env.REACT_APP_Base_url}/products/search_product`, {
+        product_name: search,
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status === 200) {
+          // window.location.href = "/search";
+          navigate("/search", {
+            state: { data: res.data.product },
+          });
+        } else {
+          alert("No product found");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <section className="hero hero-normal">
@@ -52,11 +82,15 @@ const HeroPageDroplessBar = () => {
             <div className="col-lg-9">
               <div className="hero__search">
                 <div className="hero__search__form">
-                  <form action="#">
+                  <form onSubmit={handleSearch}>
                     <div className="hero__search__categories">
                       All Categories
                     </div>
-                    <input type="text" placeholder="What do yo u need?" />
+                    <input
+                      type="text"
+                      placeholder="What do yo u need?"
+                      onChange={(e) => setSearch(e.target.value)}
+                    />
                     <button type="submit" className="site-btn">
                       SEARCH
                     </button>

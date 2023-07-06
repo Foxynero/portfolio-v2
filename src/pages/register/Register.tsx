@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const Register = () => {
-  const [firstName, setFirstName] = useState<string>("");
-  const [lastName, setLastName] = useState<string>("");
+  const [first_name, setFirstName] = useState<string>("");
+  const [last_name, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [company_name, setCompanyName] = useState<string>("");
@@ -16,8 +16,8 @@ const Register = () => {
 
     axios
       .post(`${process.env.REACT_APP_Base_url}/sellers/register`, {
-        firstName,
-        lastName,
+        first_name,
+        last_name,
         email,
         password,
         company_name,
@@ -27,6 +27,7 @@ const Register = () => {
       })
       .then((res) => {
         if (res.data.status === 201) {
+          alert(res.data.message);
           window.location.href = "/";
         }
       })
@@ -66,6 +67,7 @@ const Register = () => {
                         </p>
                         <input
                           type="text"
+                          required
                           onChange={(e) => setFirstName(e.target.value)}
                         />
                       </div>
@@ -77,6 +79,7 @@ const Register = () => {
                         </p>
                         <input
                           type="text"
+                          required
                           onChange={(e) => setLastName(e.target.value)}
                         />
                       </div>
@@ -88,6 +91,7 @@ const Register = () => {
                     </p>
                     <input
                       type="text"
+                      required
                       onChange={(e) => setCountry(e.target.value)}
                     />
                   </div>
@@ -114,6 +118,7 @@ const Register = () => {
                     </p>
                     <input
                       type="text"
+                      required
                       onChange={(e) => setCompanyName(e.target.value)}
                     />
                   </div>
@@ -125,6 +130,7 @@ const Register = () => {
                         </p>
                         <input
                           type="number"
+                          required
                           onChange={(e) => setContact(e.target.value)}
                         />
                       </div>
@@ -136,6 +142,7 @@ const Register = () => {
                         </p>
                         <input
                           type="email"
+                          required
                           onChange={(e) => setEmail(e.target.value)}
                         />
                       </div>
@@ -148,6 +155,7 @@ const Register = () => {
                     </p>
                     <input
                       type="password"
+                      required
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
