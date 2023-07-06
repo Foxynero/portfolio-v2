@@ -18,7 +18,8 @@ const Login = () => {
         console.log(res.data);
         if (res.data.status === 200) {
           sessionStorage.setItem("token", res.data.token);
-          sessionStorage.setItem("user", JSON.stringify(res.data.user));
+          sessionStorage.setItem("first_name", res.data.user.first_name);
+          // sessionStorage.setItem("user", JSON.stringify(res.data.user));
           window.location.href = "/";
         }
       })

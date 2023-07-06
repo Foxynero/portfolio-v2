@@ -3,6 +3,9 @@ import A from "../../assets/img/logo.png";
 import language from "../../assets/img/language.png";
 
 const Header = () => {
+  // get first_name from session storage
+  const first_name: string | null = sessionStorage.getItem("first_name");
+
   return (
     <>
       <header className="header">
@@ -33,9 +36,16 @@ const Header = () => {
                     </a>
                   </div>
                   <div className="header__top__right__auth">
-                    <a href="/login">
-                      <i className="fa fa-user" /> Login
-                    </a>
+                    {first_name ? (
+                      <a href="/logout">
+                        <span>Welcome {first_name}</span> |{" "}
+                        <i className="fa fa-user" /> Logout
+                      </a>
+                    ) : (
+                      <a href="/login">
+                        <i className="fa fa-user" /> Login
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

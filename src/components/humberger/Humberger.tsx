@@ -2,6 +2,9 @@ import React from "react";
 import logo from "../../assets/img/logo.png";
 
 const Humberger = () => {
+  // get first_name from session storage
+  const first_name: string | null = sessionStorage.getItem("first_name");
+
   return (
     <>
       <div className="humberger__menu__wrapper">
@@ -29,9 +32,16 @@ const Humberger = () => {
         </div>
         <div className="humberger__menu__widget">
           <div className="header__top__right__auth">
-            <a href="/login">
-              <i className="fa fa-user" /> Login
-            </a>
+            {first_name ? (
+              <a href="/logout">
+                <span>Welcome {first_name}</span> | <i className="fa fa-user" />{" "}
+                Logout
+              </a>
+            ) : (
+              <a href="/login">
+                <i className="fa fa-user" /> Login
+              </a>
+            )}
           </div>
         </div>
         {/* mobile screen */}

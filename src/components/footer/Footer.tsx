@@ -16,9 +16,9 @@ const Footer = () => {
                   </a>
                 </div>
                 <ul>
-                  <li>Address: 60-49 Road 11378 New York</li>
-                  <li>Phone: +65 11.188.888</li>
-                  <li>Email: hello@colorlib.com</li>
+                  <li>Address: 60-49 Road 11378 Accra</li>
+                  <li>Phone: +233 555 342 984</li>
+                  <li>Email: juslink@mail.com</li>
                 </ul>
               </div>
             </div>
@@ -41,9 +41,6 @@ const Footer = () => {
                   <li>
                     <a href="#/">Privacy Policy</a>
                   </li>
-                  <li>
-                    <a href="#/">Our Sitemap</a>
-                  </li>
                 </ul>
                 <ul>
                   <li>
@@ -60,9 +57,6 @@ const Footer = () => {
                   </li>
                   <li>
                     <a href="#/">Innovation</a>
-                  </li>
-                  <li>
-                    <a href="#/">Testimonials</a>
                   </li>
                 </ul>
               </div>
@@ -88,9 +82,6 @@ const Footer = () => {
                   </a>
                   <a href="#/">
                     <i className="fa fa-twitter" />
-                  </a>
-                  <a href="#/">
-                    <i className="fa fa-pinterest" />
                   </a>
                 </div>
               </div>
