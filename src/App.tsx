@@ -16,6 +16,7 @@ import "primeicons/primeicons.css";
 import "primereact/resources/primereact.min.css";
 import Search from "./pages/search/Search";
 import Activation from "./pages/activation/Activation";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -23,16 +24,18 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/cart" element={<Cart />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/login" element={<Login />} />
           <Route path="/search" element={<Search />} />
           <Route path="/details" element={<Details />} />
-          <Route path="/checkout" element={<Checkout />} />
           <Route path="/register" element={<Register />} />
           <Route path="/activation" element={<Activation />} />
 
-          {/* <Route path="/details/:id" element={<Details />} /> */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Route>
+
           <Route
             path="*"
             element={<h1 style={{ textAlign: "center" }}>Page Not Found</h1>}

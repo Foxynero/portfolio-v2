@@ -1,12 +1,56 @@
-import React from "react";
+import axios from "axios";
+import { ImCancelCircle } from "react-icons/im";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import cart_1 from "../../assets/img/cart/cart-1.jpg";
-import cart_2 from "../../assets/img/cart/cart-2.jpg";
-import cart_3 from "../../assets/img/cart/cart-3.jpg";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
 
 const Cart = () => {
+  const [cartData, setCartData] = useState<any>([]);
+  const [cartDetails, setCartDetails] = useState<any>([]);
+
+  // get cart details of the logged in user
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_Base_url}/products/get_user_cart_item`, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setCartData(res.data);
+        setCartDetails(res.data.product);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  // function to remove items from  cart
+  const removeCart = (cart_id: string) => {
+    axios
+      .post(
+        `${process.env.REACT_APP_Base_url}/products/remove_from_cart/`,
+        {
+          cart_id: cart_id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+        alert(res.data.message);
+        window.location.href = "/cart";
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <>
@@ -154,62 +198,61 @@ const Cart = () => {
                         <th />
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td className="shoping__cart__item">
-                          <img src={cart_1} alt="" />
-                          <h5>Vegetable’s Package</h5>
-                        </td>
-                        <td className="shoping__cart__price">$55.00</td>
-                        <td className="shoping__cart__quantity">
-                          <div className="quantity">
-                            <div className="pro-qty">
-                              <input type="text" defaultValue={1} />
-                            </div>
-                          </div>
-                        </td>
-                        <td className="shoping__cart__total">$110.00</td>
-                        <td className="shoping__cart__item__close">
-                          <span className="icon_close" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="shoping__cart__item">
-                          <img src={cart_2} alt="" />
-                          <h5>Fresh Garden Vegetable</h5>
-                        </td>
-                        <td className="shoping__cart__price">$39.00</td>
-                        <td className="shoping__cart__quantity">
-                          <div className="quantity">
-                            <div className="pro-qty">
-                              <input type="text" defaultValue={1} />
-                            </div>
-                          </div>
-                        </td>
-                        <td className="shoping__cart__total">$39.99</td>
-                        <td className="shoping__cart__item__close">
-                          <span className="icon_close" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="shoping__cart__item">
-                          <img src={cart_3} alt="" />
-                          <h5>Organic Bananas</h5>
-                        </td>
-                        <td className="shoping__cart__price">$69.00</td>
-                        <td className="shoping__cart__quantity">
-                          <div className="quantity">
-                            <div className="pro-qty">
-                              <input type="text" defaultValue={1} />
-                            </div>
-                          </div>
-                        </td>
-                        <td className="shoping__cart__total">$69.99</td>
-                        <td className="shoping__cart__item__close">
-                          <span className="icon_close" />
-                        </td>
-                      </tr>
-                    </tbody>
+                    {cartDetails && cartDetails.length > 0 ? (
+                      <tbody>
+                        {cartDetails.map((item: any, index: number) => (
+                          <tr key={item.cart_id}>
+                            <td className="shoping__cart__item">
+                              <img
+                                src={item.product_image}
+                                alt={item.product_name}
+                                style={{ width: "100px", height: "100px" }}
+                              />
+                              <h5>{item.product_name}</h5>
+                            </td>
+
+                            <td className="shoping__cart__price">
+                              Gh₵ {item.product_price}
+                            </td>
+
+                            <td className="shoping__cart__quantity">
+                              <div className="quantity">
+                                <div className="pro-qty">
+                                  <input
+                                    type="text"
+                                    value={item.cart_quantity}
+                                    readOnly
+                                  />
+                                </div>
+                              </div>
+                            </td>
+
+                            <td className="shoping__cart__total">
+                              Gh₵ {item.total_cost}
+                            </td>
+
+                            <td className="shoping__cart__item__close">
+                              <span
+                                className="icon_close"
+                                onClick={() => removeCart(item.cart_id)}>
+                                <ImCancelCircle color="red" />
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    ) : (
+                      <tbody>
+                        <tr>
+                          <th></th>
+                          <td></td>
+                          <td></td>
+                          <td className="py-3">No Records Found</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    )}
                   </table>
                 </div>
               </div>
@@ -238,22 +281,24 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6">
-                <div className="shoping__checkout">
-                  <h5>Cart Total</h5>
-                  <ul>
-                    <li>
-                      Subtotal <span>$454.98</span>
-                    </li>
-                    <li>
-                      Total <span>$454.98</span>
-                    </li>
-                  </ul>
-                  <a href="/checkout" className="primary-btn">
-                    PROCEED TO CHECKOUT
-                  </a>
+              {cartData && (
+                <div className="col-lg-6">
+                  <div className="shoping__checkout">
+                    <h5>Cart Total</h5>
+                    <ul>
+                      <li>
+                        Subtotal <span>Gh₵ {cartData.cart_total}</span>
+                      </li>
+                      <li>
+                        Total <span>Gh₵ {cartData.cart_total}</span>
+                      </li>
+                    </ul>
+                    <a href="/checkout" className="primary-btn">
+                      PROCEED TO CHECKOUT
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>

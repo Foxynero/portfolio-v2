@@ -5,11 +5,17 @@ const Humberger = () => {
   // get first_name from session storage
   const first_name: string | null = sessionStorage.getItem("first_name");
 
+  // logout function to clear session storage
+  const logOut = () => {
+    sessionStorage.clear();
+    window.location.href = "/";
+  };
+
   return (
     <>
       <div className="humberger__menu__wrapper">
         <div className="humberger__menu__logo">
-          <a href="#/">
+          <a href="/">
             <img src={logo} alt="" />
           </a>
         </div>
@@ -33,7 +39,7 @@ const Humberger = () => {
         <div className="humberger__menu__widget">
           <div className="header__top__right__auth">
             {first_name ? (
-              <a href="/logout">
+              <a href="/" onClick={logOut}>
                 <span>Welcome {first_name}</span> | <i className="fa fa-user" />{" "}
                 Logout
               </a>

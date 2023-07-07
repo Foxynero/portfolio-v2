@@ -1,17 +1,18 @@
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-// import product_details_1 from "../../assets/img/product/details/product-details-1.jpg";
-import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
-import { useLocation } from "react-router-dom";
 import RelateProducts from "../../components/related products/RelateProducts";
+import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
 
 const Details = () => {
   const location = useLocation();
   const { data } = location.state;
+  const [quantity, setQuantity] = useState<number | any>(1);
   const [product_details, setProductDetails] = useState<any>("");
 
+  // get the product details by passing the id of the product from state
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -27,6 +28,31 @@ const Details = () => {
         console.log(err);
       });
   }, [data]);
+
+  // handle the function of adding an item cart
+  const handleCart = (id: string) => {
+    axios
+      .post(
+        `${process.env.REACT_APP_Base_url}/products/add_to_cart`,
+        {
+          product_id: id,
+          cart_quantity: quantity,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+        alert(res.data.message);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>
@@ -192,13 +218,21 @@ const Details = () => {
                   <div className="product__details__quantity">
                     <div className="quantity">
                       <div className="pro-qty">
-                        <input type="text" defaultValue={1} />
+                        <input
+                          type="number"
+                          required
+                          defaultValue={1}
+                          onChange={(e) => setQuantity(e.target.value)}
+                        />
                       </div>
                     </div>
                   </div>
-                  <a href="#/" className="primary-btn">
+                  <button
+                    type="button"
+                    className="primary-btn"
+                    onClick={() => handleCart(product_details.id)}>
                     ADD TO CARD
-                  </a>
+                  </button>
 
                   <ul>
                     <li>
