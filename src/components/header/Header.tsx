@@ -1,5 +1,5 @@
 import axios from "axios";
-import A from "../../assets/img/logo.png";
+import A from "../../assets/img/logo.jpeg";
 import React, { useEffect, useState } from "react";
 
 const Header = () => {
@@ -86,7 +86,7 @@ const Header = () => {
             <div className="col-lg-3">
               <div className="header__logo">
                 <a href="/">
-                  <img src={A} alt="" />
+                  <img src={A} alt="" width="100%" height={50} />
                 </a>
               </div>
             </div>

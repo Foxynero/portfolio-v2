@@ -31,27 +31,38 @@ const Details = () => {
 
   // handle the function of adding an item cart
   const handleCart = (id: string) => {
-    axios
-      .post(
-        `${process.env.REACT_APP_Base_url}/products/add_to_cart`,
-        {
-          product_id: id,
-          cart_quantity: quantity,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    if (sessionStorage.getItem("token")) {
+      axios
+        .post(
+          `${process.env.REACT_APP_Base_url}/products/add_to_cart`,
+          {
+            product_id: id,
+            cart_quantity: quantity,
           },
-        }
-      )
-      .then((res) => {
-        console.log(res.data);
-        alert(res.data.message);
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+          {
+            headers: {
+              Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+            },
+          }
+        )
+        .then((res) => {
+          console.log(res.data);
+          if (
+            res.data.message === "jwt malformed" ||
+            res.data.message === "invalid token"
+          ) {
+            window.location.href = "/login";
+          }
+          alert(res.data.message);
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      alert("Please login to add item to cart");
+      window.location.href = "/login";
+    }
   };
 
   return (

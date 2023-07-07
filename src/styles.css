@@ -3475,11 +3475,11 @@ ol {
 
 /*! CUSTOM CSS FOR THE IMAGES */
 .hero__item.set-bg {
-  background-image: url("./assets/img/hero/banner.jpg");
+  background-image: url("./assets/img/hero/banner.png");
 }
 
 .breadcrumb-section.set-bg {
-  background-image: url("./assets/img/breadcrumb.jpg");
+  background-image: url("./assets/img/breadcrumb2.jpg");
 }
 
 /* PAGINATION TEXT */
