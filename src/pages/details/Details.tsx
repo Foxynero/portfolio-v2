@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
+import { ProductDetailsProps } from "../../types/Types";
 import RelateProducts from "../../components/related products/RelateProducts";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
 
@@ -10,7 +11,8 @@ const Details = () => {
   const location = useLocation();
   const { data } = location.state;
   const [quantity, setQuantity] = useState<number | any>(1);
-  const [product_details, setProductDetails] = useState<any>("");
+  const [product_details, setProductDetails] =
+    useState<ProductDetailsProps | null>(null);
 
   // get the product details by passing the id of the product from state
   useEffect(() => {

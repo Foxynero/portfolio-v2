@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ProductProps } from "../../types/Types";
 
 const Products = () => {
-  const [products, setProducts] = useState<[]>([]);
+  const [products, setProducts] = useState<ProductProps[]>([]);
 
   useEffect(() => {
     // calling the products active api
@@ -31,7 +32,7 @@ const Products = () => {
               </div>
             </div>
             {products &&
-              products.map((product: any) => {
+              products.map((product: ProductProps) => {
                 return (
                   <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
                     <div className="featured__item">

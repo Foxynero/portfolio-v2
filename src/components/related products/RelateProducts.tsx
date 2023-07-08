@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { ProductProps } from "../../types/Types";
+import { Link } from "react-router-dom";
 
 const RelateProducts = ({ category }: any) => {
   console.log(category);
 
-  const [products, setProducts] = useState<[]>([]);
+  const [products, setProducts] = useState<ProductProps[]>([]);
 
   useEffect(() => {
     axios
@@ -36,19 +38,24 @@ const RelateProducts = ({ category }: any) => {
           </div>
           <div className="row">
             {products &&
-              products.map((product: any) => {
+              products.map((product: ProductProps) => {
                 return (
                   <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
                     <div className="featured__item">
-                      <a href="/details">
-                        <img src={product.product_image} alt="" />
+                      <Link to={`/details`} state={{ data: product.id }}>
+                        <img
+                          src={product.product_image}
+                          alt={product.product_name}
+                        />
                         <div className="featured__item__text">
                           <h6>
-                            <a href="#/">{product.product_name}</a>
+                            <Link to={`/details`} state={{ data: product.id }}>
+                              {product.product_name}
+                            </Link>
                           </h6>
                           <h5>GH₵ {product.product_price}</h5>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 );
