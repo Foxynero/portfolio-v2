@@ -44,7 +44,9 @@ const Products = () => {
                         />
                         <div className="featured__item__text">
                           <h6>
-                            <Link to={`/details`}>{product.product_name}</Link>
+                            <Link to={`/details`} state={{ data: product.id }}>
+                              {product.product_name}
+                            </Link>
                           </h6>
                           <h5>GH₵ {product.product_price}</h5>
                         </div>

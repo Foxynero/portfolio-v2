@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logo.jpeg";
 
 const Humberger = () => {
   // get first_name from session storage

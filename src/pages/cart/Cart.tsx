@@ -228,7 +228,7 @@ const Cart = () => {
                             </td>
 
                             <td className="shoping__cart__total">
-                              Gh₵ {item.total_cost}
+                              Gh₵ {item.total_cost?.toLocaleString()}
                             </td>
 
                             <td className="shoping__cart__item__close">
@@ -287,10 +287,12 @@ const Cart = () => {
                     <h5>Cart Total</h5>
                     <ul>
                       <li>
-                        Subtotal <span>Gh₵ {cartData.cart_total}</span>
+                        Subtotal{" "}
+                        <span>Gh₵ {cartData.cart_total?.toLocaleString()}</span>
                       </li>
                       <li>
-                        Total <span>Gh₵ {cartData.cart_total}</span>
+                        Total{" "}
+                        <span>Gh₵ {cartData.cart_total?.toLocaleString()}</span>
                       </li>
                     </ul>
                     <a href="/checkout" className="primary-btn">

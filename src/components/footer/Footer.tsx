@@ -1,6 +1,6 @@
 import React from "react";
 import payment from "../../assets/img/payment-item.png";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logo.jpeg";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="footer__about">
                 <div className="footer__about__logo">
                   <a href="index.html">
-                    <img src={logo} alt="" />
+                    <img src={logo} alt="" width="100%" height={80} />
                   </a>
                 </div>
                 <ul>

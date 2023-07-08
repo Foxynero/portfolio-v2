@@ -106,7 +106,10 @@ const Header = () => {
                       </li>
                     </ul>
                     <div className="header__cart__price">
-                      total: <span>Gh₵ {cartDetails.cart_total}</span>
+                      total:{" "}
+                      <span>
+                        Gh₵ {cartDetails.cart_total?.toLocaleString()}
+                      </span>
                     </div>
                   </div>
                 </div>
