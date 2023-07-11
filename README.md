@@ -1,5 +1,9 @@
 # Introduction to Portfolio Project for ALX
+##Justlnk Online Shop
 This is a portfolio for ALX to showcase the skills and experience earned in the ALX Software Engineering program for the fundamental period.
+
+##A link to the deployed site
+portfolio-v2-three-murex.vercel.app
 
 # Technologies
 * React
@@ -7,7 +11,7 @@ This is a portfolio for ALX to showcase the skills and experience earned in the 
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Usage
 
 In the project directory, you can run:
 
@@ -44,9 +48,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-#Setup
+#Setup/installation
+
 Clone this repository to your local machine using
 cd into the cloned repository
 Install the required dependencies
 Run the application
 The application should now be running at http://localhost:5000
+
+#Author
+
+Felix Asare
+Foster Adu-Gyamfi (adugyamfifoster@gmail.com)
+Esther Adebimpe
