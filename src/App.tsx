@@ -1,22 +1,20 @@
-import React from "react";
 import "./styles.css";
 import Cart from "./pages/cart/Cart";
 import Shop from "./pages/shop/Shop";
 import Login from "./pages/login/Login";
+import Search from "./pages/search/Search";
+import ProtectedRoute from "./ProtectedRoute";
 import Details from "./pages/details/Details";
 import Register from "./pages/register/Register";
 import Checkout from "./pages/checkout/Checkout";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Activation from "./pages/activation/Activation";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-//theme
-import "primereact/resources/themes/lara-light-indigo/theme.css";
+// Prime React libraries theme
 import "primeicons/primeicons.css";
-//core
 import "primereact/resources/primereact.min.css";
-import Search from "./pages/search/Search";
-import Activation from "./pages/activation/Activation";
-import ProtectedRoute from "./ProtectedRoute";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 function App() {
   return (

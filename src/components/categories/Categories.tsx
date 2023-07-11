@@ -1,12 +1,12 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { CategoryProps } from "../../types/Types";
 
 const Categories = () => {
-  const [sections, setSections] = useState<[]>([]);
+  const [sections, setSections] = useState<CategoryProps[]>([]);
 
   useEffect(() => {
-    // calling the products active api
     axios
       .get(`${process.env.REACT_APP_Base_url}/utils/get_product_sections`)
       .then((res) => {
@@ -25,7 +25,7 @@ const Categories = () => {
       <div className="container">
         <div className="categories_section">
           {sections &&
-            sections.map((section: any) => {
+            sections.map((section: CategoryProps) => {
               return (
                 <div className="category_item" key={section.id}>
                   <Link to="/shop">
