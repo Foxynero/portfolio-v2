@@ -1,15 +1,12 @@
-import axios from "axios";
-import { UserProps } from "../../types/Types";
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
+import axios from "axios";
+import { UserProps } from "../../types/Types";
 
 const Checkout = () => {
-  const [cartData, setCartData] = useState<any>([]);
-  const [cartDetails, setCartDetails] = useState<any>([]);
   const [userDetails, setUserDetails] = useState<UserProps | null>(null);
-
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -34,50 +31,7 @@ const Checkout = () => {
       .catch((err) => {
         console.log(err);
       });
-
-    axios
-      .get(`${process.env.REACT_APP_Base_url}/products/get_user_cart_item`, {
-        headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        setCartData(res.data);
-        setCartDetails(res.data.product);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   }, []);
-
-  // handle checkout logic
-  const handleCheckout = () => {
-    alert(
-      "Thank you for shopping with us. Your order has been placed successfully."
-    );
-
-    // clear cart
-    axios
-      .post(
-        `${process.env.REACT_APP_Base_url}/products/clear_all_cart`,
-        {
-          user_id: userDetails?.id,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-          },
-        }
-      )
-      .then((res) => {
-        console.log(res.data);
-        window.location.href = "/";
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   return (
     <>
@@ -224,7 +178,7 @@ const Checkout = () => {
           </div>
           <div className="checkout__form">
             <h4>Billing Details</h4>
-            <>
+            <form action="#">
               <div className="row">
                 {userDetails && (
                   <div className="col-lg-8 col-md-6">
@@ -280,60 +234,99 @@ const Checkout = () => {
                         </div>
                       </div>
                     </div>
+                    <div className="checkout__input__checkbox">
+                      <label htmlFor="acc">
+                        Create an account?
+                        <input type="checkbox" id="acc" />
+                        <span className="checkmark" />
+                      </label>
+                    </div>
+                    <p>
+                      Create an account by entering the information below. If
+                      you are a returning customer please login at the top of
+                      the page
+                    </p>
+                    <div className="checkout__input">
+                      <p>
+                        Account Password<span>*</span>
+                      </p>
+                      <input type="text" />
+                    </div>
+                    <div className="checkout__input__checkbox">
+                      <label htmlFor="diff-acc">
+                        Ship to a different address?
+                        <input type="checkbox" id="diff-acc" />
+                        <span className="checkmark" />
+                      </label>
+                    </div>
+                    <div className="checkout__input">
+                      <p>
+                        Order notes<span>*</span>
+                      </p>
+                      <input
+                        type="text"
+                        placeholder="Notes about your order, e.g. special notes for delivery."
+                      />
+                    </div>
                   </div>
                 )}
 
-                {/* cart details */}
                 <div className="col-lg-4 col-md-6">
                   <div className="checkout__order">
                     <h4>Your Order</h4>
                     <div className="checkout__order__products">
                       Products <span>Total</span>
                     </div>
-                    {cartDetails &&
-                      cartDetails.map(
-                        (item: {
-                          product_name: string;
-                          total_cost: number;
-                        }) => (
-                          <>
-                            <ul>
-                              <li>
-                                {item.product_name}{" "}
-                                <span>
-                                  Gh₵ {item.total_cost.toLocaleString()}
-                                </span>
-                              </li>
-                            </ul>
-                          </>
-                        )
-                      )}
+                    <ul>
+                      <li>
+                        Vegetable’s Package <span>$75.99</span>
+                      </li>
+                      <li>
+                        Fresh Vegetable <span>$151.99</span>
+                      </li>
+                      <li>
+                        Organic Bananas <span>$53.99</span>
+                      </li>
+                    </ul>
                     <div className="checkout__order__subtotal">
-                      Subtotal{" "}
-                      <span>Gh₵ {cartData.cart_total?.toLocaleString()}</span>
+                      Subtotal <span>$750.99</span>
                     </div>
                     <div className="checkout__order__total">
-                      Total{" "}
-                      <span>Gh₵ {cartData.cart_total?.toLocaleString()}</span>
+                      Total <span>$750.99</span>
                     </div>
                     <div className="checkout__input__checkbox">
+                      <label htmlFor="acc-or">
+                        Create an account?
+                        <input type="checkbox" id="acc-or" />
+                        <span className="checkmark" />
+                      </label>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adip elit, sed do
+                      eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                    <div className="checkout__input__checkbox">
                       <label htmlFor="payment">
-                        Agree to make Payment?
+                        Check Payment
                         <input type="checkbox" id="payment" />
                         <span className="checkmark" />
                       </label>
                     </div>
-
-                    <button
-                      type="submit"
-                      className="site-btn"
-                      onClick={handleCheckout}>
+                    <div className="checkout__input__checkbox">
+                      <label htmlFor="paypal">
+                        Paypal
+                        <input type="checkbox" id="paypal" />
+                        <span className="checkmark" />
+                      </label>
+                    </div>
+                    <button type="submit" className="site-btn">
                       PLACE ORDER
                     </button>
                   </div>
                 </div>
               </div>
-            </>
+            </form>
           </div>
         </div>
       </section>
