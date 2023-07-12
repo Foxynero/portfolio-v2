@@ -18,7 +18,7 @@ const Footer = () => {
                 <ul>
                   <li>Address: 60-49 Road 11378 Accra</li>
                   <li>Phone: +233 555 342 984</li>
-                  <li>Email: juslink@mail.com</li>
+                  <li>Email: juslink@gmail.com</li>
                 </ul>
               </div>
             </div>

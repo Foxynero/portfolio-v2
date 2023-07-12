@@ -21,3 +21,16 @@ export type ProductDetailsProps = {
   product_section: string;
   id: string;
 };
+
+export type UserProps = {
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  company_name: string;
+  country: string;
+  contact: string;
+  business_category: string;
+  activated: boolean;
+  created_at: string;
+};
