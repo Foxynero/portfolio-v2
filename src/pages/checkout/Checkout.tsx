@@ -7,16 +7,11 @@ import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDro
 
 const Checkout = () => {
   const [cartData, setCartData] = useState<any>([]);
-  const [token, setToken] = useState<string>("");
   const [cartDetails, setCartDetails] = useState<any>([]);
   const [userDetails, setUserDetails] = useState<UserProps | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    // get token details
-    const token_value: string | null = sessionStorage.getItem("token");
-    setToken(token_value!);
 
     axios
       .get(`${process.env.REACT_APP_Base_url}/sellers/get_user_details`, {
@@ -56,8 +51,6 @@ const Checkout = () => {
       });
   }, []);
 
-  console.log(token);
-
   // handle checkout logic
   const handleCheckout = () => {
     alert(
@@ -66,14 +59,20 @@ const Checkout = () => {
 
     // clear cart
     axios
-      .post(`${process.env.REACT_APP_Base_url}/products/clear_all_cart`, {
-        headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+      .post(
+        `${process.env.REACT_APP_Base_url}/products/clear_all_cart`,
+        {
+          user_id: userDetails?.id,
         },
-      })
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+      )
       .then((res) => {
         console.log(res.data);
-        // window.location.href = "/";
+        window.location.href = "/";
       })
       .catch((err) => {
         console.log(err);
