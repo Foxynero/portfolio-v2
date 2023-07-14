@@ -94,15 +94,17 @@ const HeroPage = () => {
                     </button>
                   </form>
                 </div>
-                <div className="hero__search__phone">
-                  <div className="hero__search__phone__icon">
-                    <i className="fa fa-phone" />
+                <a href="tel:0555342984">
+                  <div className="hero__search__phone">
+                    <div className="hero__search__phone__icon">
+                      <i className="fa fa-phone" />
+                    </div>
+                    <div className="hero__search__phone__text">
+                      <h5>+233 555 342 984</h5>
+                      <span>support 24/7 time</span>
+                    </div>
                   </div>
-                  <div className="hero__search__phone__text">
-                    <h5>+233 555 342 984</h5>
-                    <span>support 24/7 time</span>
-                  </div>
-                </div>
+                </a>
               </div>
               <div className="hero__item set-bg">{""}</div>
             </div>

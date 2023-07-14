@@ -105,12 +105,14 @@ const Header = () => {
                         </a>
                       </li>
                     </ul>
-                    <div className="header__cart__price">
-                      total:{" "}
-                      <span>
-                        Gh₵ {cartDetails.cart_total?.toLocaleString()}
-                      </span>
-                    </div>
+                    <a href="/cart">
+                      <div className="header__cart__price">
+                        total:{" "}
+                        <span>
+                          Gh₵ {cartDetails.cart_total?.toLocaleString()}
+                        </span>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </>
@@ -125,9 +127,11 @@ const Header = () => {
                         </a>
                       </li>
                     </ul>
-                    <div className="header__cart__price">
-                      item: <span>Gh₵ 0.00</span>
-                    </div>
+                    <a href="/cart">
+                      <div className="header__cart__price">
+                        item: <span>Gh₵ 0.00</span>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </>
