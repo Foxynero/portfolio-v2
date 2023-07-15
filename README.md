@@ -1,8 +1,8 @@
 # Introduction to Portfolio Project for ALX
-##Justlnk Online Shop
+## Justlnk Online Shop
 This is a portfolio for ALX to showcase the skills and experience earned in the ALX Software Engineering program for the fundamental period.
 
-##A link to the deployed site
+## A link to the deployed site
 portfolio-v2-three-murex.vercel.app
 
 # Technologies
