@@ -62,6 +62,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Contributors
 
-| Felix Asare                                      | Foster Adu-Gyamfi                                                           | Esther Adebimpe                                                           |
-| ------------------------------------------------ | --------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| ![Felix Asare](./src/assets/screenshots/me.jpeg) | ![Foster Adu-Gyamfi](https://avatars.githubusercontent.com/u/113718153?v=4) | ![Esther Adebimpe](https://avatars.githubusercontent.com/u/113929376?v=4) |
+| Felix Asare                                                          | Foster Adu-Gyamfi                                                           | Esther Adebimpe                                                           |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| ![Felix Asare](https://avatars.githubusercontent.com/u/85615389?v=4) | ![Foster Adu-Gyamfi](https://avatars.githubusercontent.com/u/113718153?v=4) | ![Esther Adebimpe](https://avatars.githubusercontent.com/u/113929376?v=4) |
