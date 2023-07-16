@@ -2,9 +2,13 @@
 
 ## 📸 Screenshots
 
-| Home Page                                            | Products Page                                           | Details Page                                           | Cart Page                                       | Checkout Page                                           |
-| ---------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------- | ------------------------------------------------------- |
-| ![Home Page](./src/assets/screenshots/dashboard.png) | ![Products Page](./src/assets/screenshots/products.png) | ![Details Page](./src/assets/screenshots/details1.png) | ![Cart Page](./src/assets/screenshots/cart.png) | ![Checkout Page](./src/assets/screenshots/checkout.png) |
+| Home Page                                            | Products Page                                           | Details Page                                           |
+| ---------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ |
+| ![Home Page](./src/assets/screenshots/dashboard.png) | ![Products Page](./src/assets/screenshots/products.png) | ![Details Page](./src/assets/screenshots/details1.png) |
+
+| Cart Page                                       | Checkout Page                                           |
+| ----------------------------------------------- | ------------------------------------------------------- |
+| ![Cart Page](./src/assets/screenshots/cart.png) | ![Checkout Page](./src/assets/screenshots/checkout.png) |
 
 ## Justlnk Online Shop
 
@@ -12,16 +16,15 @@ This is a portfolio for ALX to showcase the skills and experience earned in the 
 
 ## A link to the deployed site
 
-portfolio-v2-three-murex.vercel.app
+- https://portfolio-v2-three-murex.vercel.app/
 
 # Technologies
 
 - React
 - Typescript
-- React Router Dom
-- React Icons
 - React Toastify
 - Prime React UI
+- React Router Dom
 
 ## Setup / Installation
 
@@ -57,8 +60,8 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-# Author
+## Contributors
 
-Felix Asare
-Foster Adu-Gyamfi (adugyamfifoster@gmail.com)
-Esther Adebimpe
+| Felix Asare                                                          | Foster Adu-Gyamfi                                                           | Esther Adebimpe                                                           |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| ![Felix Asare](https://avatars.githubusercontent.com/u/85615389?v=4) | ![Foster Adu-Gyamfi](https://avatars.githubusercontent.com/u/113718153?v=4) | ![Esther Adebimpe](https://avatars.githubusercontent.com/u/113929376?v=4) |
