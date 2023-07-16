@@ -1,14 +1,25 @@
 # Introduction to Portfolio Project for ALX
+
+## 📸 Screenshots
+
+| Home Page                                            | Products Page                                           | Details Page                                           | Cart Page                                       | Checkout Page                                           |
+| ---------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------- | ------------------------------------------------------- |
+| ![Home Page](./src/assets/screenshots/dashboard.png) | ![Products Page](./src/assets/screenshots/products.png) | ![Details Page](./src/assets/screenshots/details1.png) | ![Cart Page](./src/assets/screenshots/cart.png) | ![Checkout Page](./src/assets/screenshots/checkout.png) |
+
 ## Justlnk Online Shop
+
 This is a portfolio for ALX to showcase the skills and experience earned in the ALX Software Engineering program for the fundamental period.
 
 ## A link to the deployed site
+
 portfolio-v2-three-murex.vercel.app
 
 # Technologies
-* React
+
+- React
 
 # Getting Started with Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Usage
@@ -77,7 +88,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
 
 # Setup/installation
 
