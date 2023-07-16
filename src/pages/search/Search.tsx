@@ -3,39 +3,32 @@ import { Link, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import lp_1 from "../../assets/img/latest-product/lp-1.jpg";
-import lp_2 from "../../assets/img/latest-product/lp-2.jpg";
-import lp_3 from "../../assets/img/latest-product/lp-3.jpg";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
+import { CategoryProps } from "../../types/Types";
+import { Slider } from "primereact/slider";
+import { InputText } from "primereact/inputtext";
 
 const Search = () => {
   const location = useLocation();
   console.log(location);
   const item_category: any = location.state.data;
-  // const [products, setProducts] = useState<[]>([]);
-  // if (location.state.data.length > 0) {
-  //   setProducts(location.state.data);
-  // }
+  const [value, setValue] = useState(50);
 
-  // useEffect(() => {
-  //   // calling the  active products by category api
-  //   axios
-  //     .post(
-  //       `${process.env.REACT_APP_Base_url}/products/get_product_by_category`,
-  //       {
-  //         product_section: item_category,
-  //       }
-  //     )
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       if (res.data.status === 200) {
-  //         setProducts(res.data.product);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [item_category]);
+  const [sections, setSections] = useState<CategoryProps[]>([]);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_Base_url}/utils/get_product_sections`)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status === 200) {
+          setSections(res.data.product_sections);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <>
@@ -173,44 +166,45 @@ const Search = () => {
             <div className="col-lg-3 col-md-5">
               <div className="sidebar">
                 <div className="sidebar__item">
-                  <h4>Department</h4>
+                  <h4>Categories</h4>
                   <ul>
                     <li>
-                      <a href="#/">Fresh Meat</a>
+                      <a href="#/">Dropshipping</a>
                     </li>
                     <li>
-                      <a href="#/">Vegetables</a>
+                      <a href="#/">New Arrivals</a>
                     </li>
                     <li>
-                      <a href="#/">Fruit &amp; Nut Gifts</a>
+                      <a href="#/">Regional Specialties</a>
                     </li>
                     <li>
-                      <a href="#/">Fresh Berries</a>
+                      <a href="#/">Savings Spotlight</a>
                     </li>
                     <li>
-                      <a href="#/">Ocean Foods</a>
+                      <a href="#/">Tips</a>
                     </li>
                     <li>
-                      <a href="#/">Butter &amp; Eggs</a>
+                      <a href="#/">Top Ranking</a>
                     </li>
                     <li>
-                      <a href="#/">Fastfood</a>
+                      <a href="#/">Easy Sell</a>
                     </li>
                     <li>
-                      <a href="#/">Fresh Onion</a>
+                      <a href="#/">Friday Bonanza</a>
                     </li>
                     <li>
-                      <a href="#/">Papayaya &amp; Crisps</a>
+                      <a href="#/">Wednesday Dead Sale</a>
                     </li>
                     <li>
-                      <a href="#/">Oatmeal</a>
+                      <a href="#/">Buy me Sale</a>
                     </li>
                   </ul>
                 </div>
 
                 <div className="sidebar__item">
-                  <h4>Price</h4>
-                  <div className="price-range-wrap">
+                  {/* <h4>Price</h4> */}
+
+                  {/* <div className="price-range-wrap">
                     <div
                       className="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
                       data-min={10}
@@ -231,14 +225,14 @@ const Search = () => {
                         <input type="text" id="maxamount" />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* latest products */}
 
                 <div className="sidebar__item">
                   <div className="latest-product__text">
-                    <h4>Latest Products</h4>
+                    {/* <h4>Latest Products</h4>
                     <div className="latest-product__slider owl-carousel">
                       <div className="latest-prdouct__slider__item">
                         <a href="/details" className="latest-product__item">
@@ -298,7 +292,7 @@ const Search = () => {
                           </div>
                         </a>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
