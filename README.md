@@ -62,6 +62,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Contributors
 
-| Felix Asare                                                                               | Foster Adu-Gyamfi                                                                     | Esther Adebimpe                                                                           |
+| Felix Asare (https://github.com/flexywork327/)                                            | Foster Adu-Gyamfi (https://github.com/Foxynero)                                       | Esther Adebimpe (https://github.com/legacycodine)                                         |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | ![https://github.com/flexywork327/](https://avatars.githubusercontent.com/u/85615389?v=4) | ![https://github.com/Foxynero](https://avatars.githubusercontent.com/u/113718153?v=4) | ![https://github.com/legacycodine](https://avatars.githubusercontent.com/u/113929376?v=4) |
