@@ -1,7 +1,9 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { Toast } from "primereact/toast";
 
 const Login = () => {
+  const toast = useRef<Toast>(null);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -14,23 +16,33 @@ const Login = () => {
         password,
       })
       .then((res) => {
-        alert(res.data.message);
         console.log(res.data);
+        toast.current?.show({
+          severity: "info",
+          summary: "Info",
+          detail: `${res.data.message}`,
+          life: 10000,
+        });
         if (res.data.status === 200) {
           sessionStorage.setItem("token", res.data.token);
           sessionStorage.setItem("first_name", res.data.user.first_name);
-          // sessionStorage.setItem("user", JSON.stringify(res.data.user));
+
           window.location.href = "/";
         }
       })
       .catch((err) => {
         console.log(err);
-        alert(err.data.message);
+        toast.current?.show({
+          severity: "warn",
+          summary: "Error Message",
+          detail: `${err.data.message}`,
+        });
       });
   };
 
   return (
     <>
+      <Toast ref={toast} />
       {/* Breadcrumb Section Begin */}
       <section className="breadcrumb-section set-bg">
         <div className="container">

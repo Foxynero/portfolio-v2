@@ -1,13 +1,15 @@
 import axios from "axios";
+import { Toast } from "primereact/toast";
 import { useLocation } from "react-router-dom";
-import React, { useEffect, useState } from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import { ProductDetailsProps } from "../../types/Types";
+import React, { useEffect, useState, useRef } from "react";
 import RelateProducts from "../../components/related products/RelateProducts";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
 
 const Details = () => {
+  const toast = useRef<Toast>(null);
   const location = useLocation();
   const { data } = location.state;
   const [quantity, setQuantity] = useState<number | any>(1);
@@ -55,8 +57,17 @@ const Details = () => {
           ) {
             window.location.href = "/login";
           }
-          alert(res.data.message);
-          window.location.reload();
+
+          toast.current?.show({
+            severity: "success",
+            summary: "Info",
+            detail: `${res.data.message}`,
+            life: 10000,
+          });
+
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
         })
         .catch((err) => {
           console.log(err);
@@ -69,6 +80,7 @@ const Details = () => {
 
   return (
     <>
+      <Toast ref={toast} />
       {/* Humberger Begin */}
       <div className="humberger__menu__overlay" />
       <div className="humberger__menu__wrapper">

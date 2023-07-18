@@ -11,8 +11,8 @@ import { InputText } from "primereact/inputtext";
 const Search = () => {
   const location = useLocation();
   console.log(location);
-  const item_category: any = location.state.data;
-  const [value, setValue] = useState(50);
+  const item_category: [{}] = location.state.data;
+  const [value, setValue] = useState<number>(50);
 
   const [sections, setSections] = useState<CategoryProps[]>([]);
 

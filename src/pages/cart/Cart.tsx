@@ -1,11 +1,14 @@
 import axios from "axios";
+import { Toast } from "primereact/toast";
+import { CartProps } from "../../types/Types";
 import { ImCancelCircle } from "react-icons/im";
-import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import React, { useEffect, useRef, useState } from "react";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
 
 const Cart = () => {
+  const toast = useRef<Toast>(null);
   const [cartData, setCartData] = useState<any>([]);
   const [cartDetails, setCartDetails] = useState<any>([]);
 
@@ -18,6 +21,7 @@ const Cart = () => {
         },
       })
       .then((res) => {
+        console.log(res);
         console.log(res.data);
         setCartData(res.data);
         setCartDetails(res.data.product);
@@ -43,8 +47,19 @@ const Cart = () => {
       )
       .then((res) => {
         console.log(res.data);
-        alert(res.data.message);
-        window.location.href = "/cart";
+        // alert(res.data.message);
+        // window.location.href = "/cart";
+
+        toast.current?.show({
+          severity: "warn",
+          summary: "Info",
+          detail: `${res.data.message}`,
+          life: 10000,
+        });
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       })
       .catch((err) => {
         console.log(err);
@@ -54,6 +69,8 @@ const Cart = () => {
   return (
     <>
       <>
+        <Toast ref={toast} />
+
         {/* Humberger Begin */}
         <div className="humberger__menu__overlay" />
         <div className="humberger__menu__wrapper">
@@ -172,7 +189,7 @@ const Cart = () => {
                 <div className="breadcrumb__text">
                   <h2>Shopping Cart</h2>
                   <div className="breadcrumb__option">
-                    <a href="index.html">Home</a>
+                    <a href="/">Home</a>
                     <span>Shopping Cart</span>
                   </div>
                 </div>
@@ -200,7 +217,7 @@ const Cart = () => {
                     </thead>
                     {cartDetails && cartDetails.length > 0 ? (
                       <tbody>
-                        {cartDetails.map((item: any, index: number) => (
+                        {cartDetails.map((item: CartProps, index: number) => (
                           <tr key={item.cart_id}>
                             <td className="shoping__cart__item">
                               <img
@@ -248,6 +265,7 @@ const Cart = () => {
                           <td></td>
                           <td></td>
                           <td className="py-3">No Records Found</td>
+                          <td></td>
                           <td></td>
                           <td></td>
                         </tr>

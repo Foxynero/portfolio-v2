@@ -7,6 +7,7 @@ import lp_1 from "../../assets/img/latest-product/lp-1.jpg";
 import lp_2 from "../../assets/img/latest-product/lp-2.jpg";
 import lp_3 from "../../assets/img/latest-product/lp-3.jpg";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
+import { ProductProps } from "../../types/Types";
 
 const Shop = () => {
   const location = useLocation();
@@ -307,7 +308,7 @@ const Shop = () => {
             <div className="col-lg-9 col-md-7">
               <div className="row">
                 {products &&
-                  products.map((product: any) => {
+                  products.map((product: ProductProps) => {
                     return (
                       <div
                         className="col-lg-3 col-md-4 col-sm-6"
