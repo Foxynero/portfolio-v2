@@ -7,6 +7,7 @@ import { ProductDetailsProps } from "../../types/Types";
 import React, { useEffect, useState, useRef } from "react";
 import RelateProducts from "../../components/related products/RelateProducts";
 import HeroPageDroplessBar from "../../components/dropless-hero-page/HeroPageDroplessBar";
+import { Image } from "primereact/image";
 
 const Details = () => {
   const toast = useRef<Toast>(null);
@@ -73,8 +74,16 @@ const Details = () => {
           console.log(err);
         });
     } else {
-      alert("Please login to add item to cart");
-      window.location.href = "/login";
+      toast.current?.show({
+        severity: "warn",
+        summary: "Info",
+        detail: `Please login to add item to cart`,
+        life: 10000,
+      });
+
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 6000);
     }
   };
 
@@ -217,10 +226,12 @@ const Details = () => {
               <div className="col-lg-6 col-md-6">
                 <div className="product__details__pic">
                   <div className="product__details__pic__item">
-                    <img
-                      className="product__details__pic__item--large"
+                    <Image
                       src={product_details.product_image}
-                      alt=""
+                      alt="Image"
+                      width="100%"
+                      height="100%"
+                      preview
                     />
                   </div>
                 </div>

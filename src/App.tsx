@@ -5,6 +5,7 @@ import Login from "./pages/login/Login";
 import Search from "./pages/search/Search";
 import ProtectedRoute from "./ProtectedRoute";
 import Details from "./pages/details/Details";
+import Account from "./pages/account/Account";
 import Register from "./pages/register/Register";
 import Checkout from "./pages/checkout/Checkout";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -32,6 +33,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/user-account" element={<Account />} />
           </Route>
 
           <Route

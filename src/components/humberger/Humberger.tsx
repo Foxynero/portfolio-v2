@@ -39,10 +39,17 @@ const Humberger = () => {
         <div className="humberger__menu__widget">
           <div className="header__top__right__auth">
             {first_name ? (
-              <a href="/" onClick={logOut}>
-                <span>Welcome {first_name}</span> | <i className="fa fa-user" />{" "}
-                Logout
-              </a>
+              <>
+                <span
+                  onClick={() => {
+                    window.location.href = "/user-account";
+                  }}>
+                  <span>Welcome {first_name}</span> |{" "}
+                </span>
+                <span onClick={logOut}>
+                  <i className="fa fa-user" /> Logout
+                </span>
+              </>
             ) : (
               <a href="/login">
                 <i className="fa fa-user" /> Login

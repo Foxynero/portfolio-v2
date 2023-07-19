@@ -23,6 +23,7 @@ const Login = () => {
           detail: `${res.data.message}`,
           life: 10000,
         });
+
         if (res.data.status === 200) {
           sessionStorage.setItem("token", res.data.token);
           sessionStorage.setItem("first_name", res.data.user.first_name);
